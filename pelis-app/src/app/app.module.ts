@@ -15,6 +15,7 @@ import { NewstvComponent } from './components/eventos/newstv.component';
 import { NewsfameComponent } from './components/eventos/newsfame.component';
 import { EncuestasComponent } from './components/eventos/encuestas.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { FichaComponent } from './components/ficha/ficha.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     NewstvComponent,
     NewsfameComponent,
     EncuestasComponent,
-    ContactoComponent
+    ContactoComponent,
+    FichaComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ import {EncuestasComponent} from './components/eventos/encuestas.component';
 
 import {ContactoComponent} from './components/contacto/contacto.component';
 import {HomeComponent} from './components/home/home.component';
+import {FichaComponent} from './components/ficha/ficha.component';
 import {peliculas_routes} from './components/peliculas/peliculas.routes';
 const app_routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,7 @@ const app_routes: Routes = [
   { path: 'cine',component: CineComponent},
   { path: 'estrenos',component: EstrenosComponent},
   { path: 'listapelis',component: ValoracionComponent},
+  { path: 'ficha',component: FichaComponent},
 
   { path: 'eventos/:id',component: EventosComponent},
   { path: 'news-cine',component: NewscineComponent},
