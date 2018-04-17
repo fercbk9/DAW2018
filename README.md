@@ -27,6 +27,8 @@ Te recordamos que puedes usar las tecnologías (base de datos, lenguajes de prog
 
 -17 de Abril de 17:00 a 20:00 horas. 25% de la valoración final
 
+Fernando Martinez Pellicer
+
 -De 16:00 a 17:00 h. Comprobación de herramientas y adaptación al puesto
 
 -De 17:00 a 20:00 h. Realizacin de la prueba
