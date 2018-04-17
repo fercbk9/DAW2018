@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.enlaces{
+  color: white;
+  font-style: none;
+  text-decoration: none;
+}
+.enlaces a{
+  margin-left: 15px;
+  color: white;
+  font-style: none;
+  text-decoration: none;
+}

@@ -1,0 +1,32 @@
+.main-container{
+  height: 500px;
+}
+.carousel, .carousel-inner > .item > img {
+  height: 500px;
+  margin-top: 0px;
+}
+img{
+  height: 500px;
+}
+.search{
+  margin-top: 20px;
+
+}
+.jumbotron{
+  margin-bottom: 0;
+  height: 200px;
+  color:black;
+
+}
+.display-4{
+  margin-left: 5%;
+  width: 80%;
+
+}
+.orden{
+  margin-left:22%;
+  margin-top: 15px;
+}
+.cardss{
+  margin-top: 20px;
+}
