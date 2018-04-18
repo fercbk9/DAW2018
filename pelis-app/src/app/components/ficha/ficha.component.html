@@ -1,2 +1,25 @@
 <div class="bg-dark enlaces"><span class=""><a [routerLink]="['home']">Inicio</a><a [routerLink]="['peliculas']">>Peliculas</a><a [routerLink]="['/ficha']"> >Ficha</a></span>
 </div>
+<div class="container main-container" *ngIf="pelicula">
+  <h1>Titulo</h1>
+
+  <hr>
+  <div class="row">
+    <div class="col-md-5">
+      <img class="img-thumbnail img-fluid" [src]="pelicula | pelicula:true" [alt]="pelicula.original_title">
+    </div>
+    <div class="col-md-7">
+    <h3>Sinopsis:</h3>
+    <hr>
+    <p></p>
+    <h4>Fecha Lanzamiento: <span></span></h4>
+
+
+        <hr>
+    <h4>Rating: <span class="badge badge-primary"></span></h4>
+
+  <button type="button" class="btn btn-danger" name="button" [routerLink]="['/'+regresar,parametro]">Regresar</button>
+    </div>
+
+  </div>
+</div>
