@@ -8,6 +8,7 @@ import { PeliculasService } from '../../services/peliculas.service';
 export class CarouselComponent implements OnInit {
   peliculas:any
   nuevoarray:any
+  array_carousel:any;
   filtro:string = "";
   buscar:string = "";
   buscado:boolean = false;
@@ -16,6 +17,7 @@ export class CarouselComponent implements OnInit {
     this._ps.getPeliculasDb().subscribe(data => {
       console.log(data);
       this.peliculas = data;
+      this.array_carousel = data;
     });/*
     this._ps.getPeliculas().subscribe(data => {
       console.log(data);
@@ -32,6 +34,22 @@ export class CarouselComponent implements OnInit {
           }
          });
      }*/
+     this._ps.getPeliculasDb().subscribe(data => {
+       console.log(data);
+       this.peliculas = data;
+       this.array_carousel = data;
+     });
+     setTimeout(() => {
+       this.nuevoarray = this.peliculas;
+       this.peliculas = [];
+       for (let variable in this.nuevoarray) {
+          if ( this.nuevoarray[variable].movie_title.toLowerCase().includes(this.buscar)) {
+              this.peliculas.push(this.nuevoarray[variable]);
+            console.log(this.peliculas);
+          }
+       }
+     },400);
+
    }
   ngOnInit() {
 

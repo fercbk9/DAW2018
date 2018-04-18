@@ -10,8 +10,8 @@
       <div class="carousel-item active" >
         <img class="d-block w-100" src="assets/la.jpg" alt="First slide">
       </div>
-      <div class="carousel-item " *ngFor="let item of peliculas | keys">
-        <img class="d-block w-100" [src]="peliculas[item].images" alt="First slide">
+      <div class="carousel-item " *ngFor="let item of array_carousel | keys">
+        <img class="d-block w-100" [src]="array_carousel[item].images" alt="First slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -54,7 +54,7 @@
   <div class="container main-container">
   <div class="card-columns" *ngIf="peliculas && !buscado">
 <div class="card" *ngFor="let item of peliculas | keys">
-
+{{peliculas[item]}}
   <img class="card-img-top" [src]="peliculas[item].images" [alt]="peliculas[item].movie_title">
 
   <div class="card-body">
