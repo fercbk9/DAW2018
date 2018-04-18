@@ -1,25 +1,80 @@
-<div class="bg-dark enlaces"><span class=""><a [routerLink]="['home']">Inicio</a><a [routerLink]="['peliculas']">>Peliculas</a><a [routerLink]="['/ficha']"> >Ficha</a></span>
-</div>
 <div class="container main-container" *ngIf="pelicula">
-  <h1>Titulo</h1>
-
+  <h1>{{pelicula.title}}</h1>
+  <button type="button" class="btn btn-danger" name="button" [routerLink]="['/listapelis']">Regresar</button>
   <hr>
-  <div class="row">
+  <div class="alert alert-danger" role="alert" *ngIf="eliminado">
+  Pelicula eliminada... Redirigiendo.
+</div>
+  <div class="row" *ngIf="!eliminado">
     <div class="col-md-5">
-      <img class="img-thumbnail img-fluid" [src]="pelicula | pelicula:true" [alt]="pelicula.original_title">
+      <img class="img-thumbnail img-fluid" [src]="pelicula.images" [alt]="pelicula.movie_title">
     </div>
     <div class="col-md-7">
-    <h3>Sinopsis:</h3>
+    <h3>Reparto:</h3>
     <hr>
-    <p></p>
-    <h4>Fecha Lanzamiento: <span></span></h4>
+    <p>{{pelicula.star_cast}}</p>
+    <h4>Año: <span>{{pelicula.year}}</span></h4>
 
 
         <hr>
-    <h4>Rating: <span class="badge badge-primary"></span></h4>
+    <h4>Rating: <span class="badge badge-primary">{{pelicula.rating}}</span></h4>
 
-  <button type="button" class="btn btn-danger" name="button" [routerLink]="['/'+regresar,parametro]">Regresar</button>
+
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+      Editar
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input class="form-control" type="text" placeholder="Fecha" [(ngModel)]="pelicula.year"><br>
+            <input class="form-control" type="text" placeholder="Valoracion" [(ngModel)]="pelicula.rating"><br>
+            <input class="form-control" type="text" placeholder="Reparto" [(ngModel)]="pelicula.star_cast">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" (click)="actualizar()" data-dismiss="modal">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2">
+  Borrar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <span class="text-center">¿Estás seguro de borrar la película?</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="borrar()" data-dismiss="modal">Borrar</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
 
   </div>
+  <!-- Button trigger modal -->
+
 </div>

@@ -7,18 +7,48 @@ import { PeliculasService } from '../../services/peliculas.service';
 })
 export class CarouselComponent implements OnInit {
   peliculas:any
+  nuevoarray:any
+  filtro:string = "";
+  //Cargamos las peliculas de la base de datos
   constructor(private _ps:PeliculasService) {
     this._ps.getPeliculasDb().subscribe(data => {
       console.log(data);
       this.peliculas = data;
-    });
-   }
-
-  ngOnInit() {
-    /*this._ps.getPeliculas().subscribe(data => {
+    });/*
+    this._ps.getPeliculas().subscribe(data => {
       console.log(data);
 
     });*/
+   }
+
+  ngOnInit() {
+
+  }
+
+  ordenar(filtro:string){
+    this.nuevoarray = this.peliculas;
+    this.peliculas = [];
+    switch(filtro){
+      case 'fecha':
+      for (var variable in this.nuevoarray) {
+        for (let item in this.nuevoarray) {
+          if (this.nuevoarray[variable].year < this.nuevoarray[item].year) {
+              this.peliculas.push(variable)
+          }
+
+        }
+
+      }
+
+
+      break;
+      case 'valoracion':
+
+      break;
+      case 'titulo':
+
+      break;
+    }
   }
 
 }

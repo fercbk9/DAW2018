@@ -1,7 +1,9 @@
 <div class="bg-dark enlaces"><span class=""><a [routerLink]="['home']">Inicio</a><a [routerLink]="['peliculas']">>Peliculas</a><a [routerLink]="['listapelis']"> >Peliculas Mejor Valoradas</a></span>
 </div>
 <div class="contacto-container">
-
+  <div class="alert alert-success" role="alert" *ngIf="enviado">
+  <strong>Enviado!</strong> Tu mensaje se envio correctamente.
+</div>
 <div class="col-md-8">
 
 
@@ -33,7 +35,7 @@
       <div class="form-group row botones">
 
         <div class="col-sm-6 inicio">
-          <button type="button" class="btn btn-primary btn-lg">Enviar Mensaje</button>
+          <button type="button" class="btn btn-primary btn-lg" (click)="enviar()">Enviar Mensaje</button>
         </div>
         <div class="col-sm-6 inicio">
           <button type="button" class="btn btn-primary btn-lg "  [routerLink]="['home']">Inicio</button>

@@ -20,6 +20,7 @@ import { PeliculaPipe } from './pipes/pelicula.pipe';
 import { PeliculasService } from './services/peliculas.service';
 import { HttpModule, JsonpModule} from '@angular/http';
 import { KeysPipe } from './pipes/keys.pipe';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     BrowserModule,
     app_routing,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    FormsModule
   ],
   providers: [PeliculasService],
   bootstrap: [AppComponent]
