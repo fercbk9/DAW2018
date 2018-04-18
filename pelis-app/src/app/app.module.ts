@@ -16,8 +16,10 @@ import { NewsfameComponent } from './components/eventos/newsfame.component';
 import { EncuestasComponent } from './components/eventos/encuestas.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { FichaComponent } from './components/ficha/ficha.component';
-
-
+import { PeliculaPipe } from './pipes/pelicula.pipe';
+import { PeliculasService } from './services/peliculas.service';
+import { HttpModule, JsonpModule} from '@angular/http';
+import { KeysPipe } from './pipes/keys.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,13 +36,17 @@ import { FichaComponent } from './components/ficha/ficha.component';
     NewsfameComponent,
     EncuestasComponent,
     ContactoComponent,
-    FichaComponent
+    FichaComponent,
+    PeliculaPipe,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
-    app_routing
+    app_routing,
+    HttpModule,
+    JsonpModule
   ],
-  providers: [],
+  providers: [PeliculasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

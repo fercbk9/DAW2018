@@ -53,30 +53,17 @@
     </form>
 
   </div>
-  <div class="card-deck cardss">
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"><a [routerLink]="['/ficha']">titulo</a></h5>
-        <p class="card-text">Puntuacion</p>
-        <p class="card-text">Fecha</p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Titulo</h5>
-        <p class="card-text">Puntuacion</p>
-        <p class="card-text">Fecha</p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Titulo</h5>
-        <p class="card-text">Puntuacion</p>
-        <p class="card-text">Fecha</p>
-      </div>
-    </div>
+  <div class="container main-container">
+  <div class="card-columns" *ngIf="peliculas">
+<div class="card" *ngFor="let item of peliculas | keys">
+  <img class="card-img-top" [src]="peliculas[item] | pelicula" [alt]="item.original_title">
+  <div class="card-body">
+
+    <h5 class="card-title">{{peliculas[item].title}}</h5>
+    <p class="card-text text-justify">{{peliculas[item].overview | slice:0:300}}...</p>
+    <button type="button" class="btn btn-primary btn-block" name="button" [routerLink]="['/pelicula',item.id,'buscar',buscar]">Ver más</button>
   </div>
+</div>
+</div>
+</div>
 </div>

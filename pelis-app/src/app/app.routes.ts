@@ -22,7 +22,7 @@ const app_routes: Routes = [
   { path: 'cine',component: CineComponent},
   { path: 'estrenos',component: EstrenosComponent},
   { path: 'listapelis',component: ValoracionComponent},
-  { path: 'ficha',component: FichaComponent},
+  { path: 'ficha/:id',component: FichaComponent},
 
   { path: 'eventos/:id',component: EventosComponent},
   { path: 'news-cine',component: NewscineComponent},
