@@ -25,11 +25,11 @@
   </div>
   <div class="container search">
     <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-primary btn-lg" type="submit"><i class="fa fa-search"></i></button>
-      <input class="form-control form-control-lg" type="search" placeholder="Buscar Película" aria-label="Search">
+      <button class="btn btn-primary btn-lg" type="submit" (click)="buscarPelicula()"><i class="fa fa-search"></i></button>
+      <input class="form-control form-control-lg" [(ngModel)]="buscar" (keyup.enter)="buscarPelicula()" name="buscar" type="search" placeholder="Buscar Película" aria-label="Search">
   </form>
   </div>
-  {{filtro}}
+
   <div class="col-md-8">
     <form class="orden">
       <div class="form-check form-check-inline">
@@ -52,10 +52,11 @@
 
   </div>
   <div class="container main-container">
-  <div class="card-columns" *ngIf="peliculas">
+  <div class="card-columns" *ngIf="peliculas && !buscado">
 <div class="card" *ngFor="let item of peliculas | keys">
 
   <img class="card-img-top" [src]="peliculas[item].images" [alt]="peliculas[item].movie_title">
+
   <div class="card-body">
 
     <h5 class="card-title">{{peliculas[item].movie_title}}</h5>
@@ -63,6 +64,26 @@
     <button type="button" class="btn btn-primary btn-block" name="button" [routerLink]="['/ficha',item]">Ver más</button>
   </div>
 </div>
+
+</div>
+
+
+
+
+
+<div class="card-columns" *ngIf="peliculas && buscado">
+<div class="card" *ngFor="let item of peliculas | keys">
+
+<img class="card-img-top" [src]="peliculas[item] | pelicula" [alt]="peliculas[item].title">
+
+<div class="card-body">
+
+  <h5 class="card-title">{{peliculas[item].title}}</h5>
+  <p class="card-text text-justify">View More...</p>
+  <button type="button" class="btn btn-primary btn-block" name="button" [routerLink]="['/ficha',item]">Ver más</button>
+</div>
+</div>
+
 </div>
 </div>
 </div>

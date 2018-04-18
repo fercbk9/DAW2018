@@ -21,6 +21,7 @@ import { PeliculasService } from './services/peliculas.service';
 import { HttpModule, JsonpModule} from '@angular/http';
 import { KeysPipe } from './pipes/keys.pipe';
 import {FormsModule} from '@angular/forms';
+import { HolaComponent } from './hola/hola.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import {FormsModule} from '@angular/forms';
     ContactoComponent,
     FichaComponent,
     PeliculaPipe,
-    KeysPipe
+    KeysPipe,
+    HolaComponent
   ],
   imports: [
     BrowserModule,

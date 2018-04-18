@@ -30,3 +30,69 @@ img{
 .cardss{
   margin-top: 20px;
 }
+body, html {
+    background-color: #000;
+  }
+
+  .container--head {
+      background: transparent !important;
+    }
+
+    .tooltip-carousel {
+      position: absolute;
+      z-index: 11;
+      border-radius: 50%;
+    }
+
+    .caraousel-tooltip-item {
+      display: none;
+    }
+
+    .caraousel-tooltip-item.active {
+      display: block;
+    }
+
+.video-style {
+  width:100%;
+  height:auto;
+  margin: auto;
+  background-color:#000;
+}
+.carousel-inner {
+  background-color: #000; /* Color that shows up below video */
+  position: relative;
+}
+.carousel-caption {
+  width: 340px;
+  height: auto;
+  margin-bottom: 50px;
+  text-align:left !important;
+}
+/*.caraousel-tooltip-item > fa {
+  position: fixed;
+  top: 40px;
+  left: 100px;
+}*/
+/* =========== TRANSITIONS =========== */
+.carousel.c-fade .item {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.carousel.c-fade .active.left,
+.carousel.c-fade .active.right {
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.carousel.c-fade .next,
+.carousel.c-fade .prev {
+  left: 0;
+  z-index: 1;
+}
+.carousel.c-fade .carousel-control {
+  z-index: 3;
+}

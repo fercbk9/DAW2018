@@ -58,7 +58,7 @@ buscaPelicula(pelicula:string)
 {
   let url = "https://api.themoviedb.org/3/search/movie?query="+pelicula+"&sort_by=popularity.desc&api_key=04cb6e63a1049f06c5a3ef235f6b4637&language=es&callback=JSONP_CALLBACK";
 
-  return this._http.get(url).map(data => {
+  return this._json.get(url).map(data => {
     this.peliculas = data.json().results;
     return data.json().results;
   });
@@ -91,4 +91,5 @@ borrar(key$:string){
     return res.json();
   });
 }
+
 }

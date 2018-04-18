@@ -9,6 +9,8 @@ export class CarouselComponent implements OnInit {
   peliculas:any
   nuevoarray:any
   filtro:string = "";
+  buscar:string = "";
+  buscado:boolean = false;
   //Cargamos las peliculas de la base de datos
   constructor(private _ps:PeliculasService) {
     this._ps.getPeliculasDb().subscribe(data => {
@@ -20,7 +22,17 @@ export class CarouselComponent implements OnInit {
 
     });*/
    }
-
+   buscarPelicula()
+   {
+    /* if (this.buscar.length!=0) {
+         this._ps.buscaPelicula(this.buscar).subscribe(data => {
+          if (data) {
+              this.buscado = true;
+              this.peliculas = data;
+          }
+         });
+     }*/
+   }
   ngOnInit() {
 
   }
