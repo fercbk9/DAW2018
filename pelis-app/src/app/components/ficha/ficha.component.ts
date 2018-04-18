@@ -38,7 +38,7 @@ export class FichaComponent implements OnInit {
        this.eliminado = true;
      },error => { console.log(error) });
      setTimeout(() => {
-       this.router.navigate(['/listapelis']);
+       this.router.navigate(['dist/listapelis']);
 
      },1500);
 
