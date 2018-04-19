@@ -1,6 +1,6 @@
 <div class="container main-container" *ngIf="pelicula">
   <h1>{{pelicula.title}}</h1>
-  <button type="button" class="btn btn-danger" name="button" [routerLink]="['/dist/listapelis']">Regresar</button>
+  <button type="button" class="btn btn-danger" name="button" [routerLink]="['/listapelis']">Regresar</button>
   <hr>
   <div class="alert alert-danger" role="alert" *ngIf="eliminado">
   Pelicula eliminada... Redirigiendo.

@@ -17,7 +17,7 @@ private rutaImg:string = "http://image.tmdb.org/t/p/w500";
     }
 
 
-    return "dist/assets/No_image.jpg";
+    return "assets/No_image.jpg";
   }
 
 }

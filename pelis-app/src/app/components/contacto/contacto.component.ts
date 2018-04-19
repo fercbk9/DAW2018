@@ -11,7 +11,7 @@ export class ContactoComponent implements OnInit {
   enviar()
   {
     this.enviado = true;
-    setTimeout(() => {this.router.navigate(['dist/home'])},3000);
+    setTimeout(() => {this.router.navigate(['/home'])},3000);
   }
   ngOnInit() {
   }

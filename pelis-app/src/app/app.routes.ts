@@ -16,21 +16,21 @@ import {HomeComponent} from './components/home/home.component';
 import {FichaComponent} from './components/ficha/ficha.component';
 import {peliculas_routes} from './components/peliculas/peliculas.routes';
 const app_routes: Routes = [
-  { path: 'dist/home', component: HomeComponent },
-  { path: 'dist/contacto', component: ContactoComponent },
-  { path: 'dist/peliculas/:id',component: PeliculasComponent},
-  { path: 'dist/cine',component: CineComponent},
-  { path: 'dist/estrenos',component: EstrenosComponent},
-  { path: 'dist/listapelis',component: ValoracionComponent},
-  { path: 'dist/ficha/:id',component: FichaComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'contacto', component: ContactoComponent },
+  { path: 'peliculas/:id',component: PeliculasComponent},
+  { path: 'cine',component: CineComponent},
+  { path: 'estrenos',component: EstrenosComponent},
+  { path: 'listapelis',component: ValoracionComponent},
+  { path: 'ficha/:id',component: FichaComponent},
 
-  { path: 'dist/eventos/:id',component: EventosComponent},
-  { path: 'dist/news-cine',component: NewscineComponent},
-  { path: 'dist/news-tv',component: NewstvComponent},
-  { path: 'dist/news-famosos',component: NewsfameComponent},
-  { path: 'dist/encuestas',component: EncuestasComponent},
+  { path: 'eventos/:id',component: EventosComponent},
+  { path: 'news-cine',component: NewscineComponent},
+  { path: 'news-tv',component: NewstvComponent},
+  { path: 'news-famosos',component: NewsfameComponent},
+  { path: 'encuestas',component: EncuestasComponent},
 
-  { path: '**', pathMatch: 'full', redirectTo: 'dist/home' }
+  { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
 export const app_routing = RouterModule.forRoot(app_routes);

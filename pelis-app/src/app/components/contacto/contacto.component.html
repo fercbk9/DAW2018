@@ -1,4 +1,4 @@
-<div class="bg-dark enlaces"><span class=""><a [routerLink]="['dist/home']">Inicio</a><a [routerLink]="['dist/peliculas']">>Peliculas</a><a [routerLink]="['dist/listapelis']"> >Peliculas Mejor Valoradas</a></span>
+<div class="bg-dark enlaces"><span class=""><a [routerLink]="['/home']">Inicio</a><a [routerLink]="['/peliculas']">>Peliculas</a><a [routerLink]="['/listapelis']"> >Peliculas Mejor Valoradas</a></span>
 </div>
 <div class="contacto-container">
   <div class="alert alert-success" role="alert" *ngIf="enviado">
@@ -38,7 +38,7 @@
           <button type="button" class="btn btn-primary btn-lg" (click)="enviar()">Enviar Mensaje</button>
         </div>
         <div class="col-sm-6 inicio">
-          <button type="button" class="btn btn-primary btn-lg "  [routerLink]="['dist/home']">Inicio</button>
+          <button type="button" class="btn btn-primary btn-lg "  [routerLink]="['/home']">Inicio</button>
         </div>
       </div>
     </form>

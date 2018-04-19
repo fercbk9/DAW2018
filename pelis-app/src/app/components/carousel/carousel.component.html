@@ -1,4 +1,4 @@
-<div class="bg-dark enlaces"><span class=""><a [routerLink]="['/dist/home']">Inicio</a><a [routerLink]="['/dist/home']">>Peliculas</a><a [routerLink]="['/dist/listapelis']"> >Peliculas Mejor Valoradas</a></span>
+<div class="bg-dark enlaces"><span class=""><a [routerLink]="['/home']">Inicio</a><a [routerLink]="['/home']">>Peliculas</a><a [routerLink]="['/listapelis']"> >Peliculas Mejor Valoradas</a></span>
 </div>
 <div class="main-container">
   <div class="jumbotron jumbotron-fluid bg-ligth">
@@ -8,7 +8,7 @@
   <div id="carouselExampleControls" class="carousel slide tamano" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" >
-        <img class="d-block w-100" src="dist/assets/la.jpg" alt="First slide">
+        <img class="d-block w-100" src="assets/la.jpg" alt="First slide">
       </div>
       <div class="carousel-item " *ngFor="let item of array_carousel | keys">
         <img class="d-block w-100" [src]="array_carousel[item].images" alt="First slide">
@@ -61,7 +61,7 @@
 
     <h5 class="card-title">{{peliculas[item].movie_title}}</h5>
     <p class="card-text text-justify">{{peliculas[item].star_cast | slice:0:300}}...</p>
-    <button type="button" class="btn btn-primary btn-block" name="button" [routerLink]="['/dist/ficha',item]">Ver más</button>
+    <button type="button" class="btn btn-primary btn-block" name="button" [routerLink]="['/ficha',item]">Ver más</button>
   </div>
 </div>
 
@@ -80,7 +80,7 @@
 
   <h5 class="card-title">{{peliculas[item].title}}</h5>
   <p class="card-text text-justify">View More...</p>
-  <button type="button" class="btn btn-primary btn-block" name="button" [routerLink]="['/dist/ficha',item]">Ver más</button>
+  <button type="button" class="btn btn-primary btn-block" name="button" [routerLink]="['/ficha',item]">Ver más</button>
 </div>
 </div>
 
