@@ -55,28 +55,31 @@ export class CarouselComponent implements OnInit {
 
   }
 
-  ordenar(filtro:string){
-    this.nuevoarray = this.peliculas;
-    this.peliculas = [];
+    ordenar(filtro:string){
+      this.peliculas = Object.values(this.peliculas);
     switch(filtro){
       case 'fecha':
-      for (var variable in this.nuevoarray) {
-        for (let item in this.nuevoarray) {
-          if (this.nuevoarray[variable].year < this.nuevoarray[item].year) {
-              this.peliculas.push(variable)
-          }
-
-        }
-
-      }
-
+			this.peliculas.sort((a,b) => {
+				return(a.year - b.year);
+			});
+			
 
       break;
       case 'valoracion':
+		this.peliculas.sort((a,b) => {
+			return (b.rating - a.rating);
+		});
 
       break;
       case 'titulo':
-
+		this.peliculas.sort((a, b) => {
+			if ( a.movie_title > b.movie_title )
+				return 1;
+			if ( a.movie_title < b.movie_title )
+				return -1;
+			return 0;
+		});
+		
       break;
     }
   }
